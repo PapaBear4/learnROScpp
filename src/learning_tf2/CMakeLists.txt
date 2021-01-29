@@ -151,6 +151,12 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+add_executable(static_turtle_tf2_broadcaster src/static_turtle_tf2_broadcaster.cpp)
+target_link_libraries(static_turtle_tf2_broadcaster ${catkin_LIBRARIES})
+
+add_executable(turtle_tf2_broadcaster src/turtle_tf2_broadcaster.cpp)
+target_link_libraries(turtle_tf2_broadcaster ${catkin_LIBRARIES})
+
 
 #############
 ## Install ##
@@ -196,6 +202,7 @@ catkin_install_python(PROGRAMS
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 install(FILES
   launch/start_demo.launch
+  launch/cpp_demo.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

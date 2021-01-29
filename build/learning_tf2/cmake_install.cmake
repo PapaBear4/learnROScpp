@@ -77,6 +77,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_tf2" TYPE FILE FILES "/home/sidell/learnROS/src/learning_tf2/launch/start_demo.launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/learning_tf2" TYPE FILE FILES
+    "/home/sidell/learnROS/src/learning_tf2/launch/start_demo.launch"
+    "/home/sidell/learnROS/src/learning_tf2/launch/cpp_demo.launch"
+    )
 endif()
 
