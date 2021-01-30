@@ -11,5 +11,16 @@
           args="/turtle1" name="turtle1_tf2_broadcaster" />
     <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
           args="/turtle2" name="turtle2_tf2_broadcaster" />
+    <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
+          args="/turtle3" name="turtle3_tf2_broadcaster" />
+    <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
+          args="/turtle4" name="turtle4_tf2_broadcaster" />
+
+    <node pkg="learning_tf2" type="turtle_tf2_listener"
+          args="turtle1 turtle2"   name="listener12" />
+    <node pkg="learning_tf2" type="turtle_tf2_listener"
+          args="turtle2 turtle3"   name="listener23" />
+    <node pkg="learning_tf2" type="turtle_tf2_listener"
+          args="turtle3 turtle4"   name="listener34" />  
 
   </launch>
