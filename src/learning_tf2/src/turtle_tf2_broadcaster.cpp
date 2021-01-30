@@ -27,15 +27,15 @@ void poseCallback(const turtlesim::PoseConstPtr& msg){
 }
 
 int main(int argc, char** argv){
-  ros::init(argc, argv, "my_tf2_broadcaster");
+  ros::init(argc, argv, "my_tf2_broadcaster"); //initialize node
 
   ros::NodeHandle private_node("~");
-  if (! private_node.hasParam("turtle"))
+  if (! private_node.hasParam("turtle"))  // if the node has the parameter "turtle" then...
   {
-    if (argc != 2){ROS_ERROR("need turtle name as argument"); return -1;};
-    turtle_name = argv[1];
+    if (argc != 2){ROS_ERROR("need turtle name as argument"); return -1;};//make sure they included a turtle name
+    turtle_name = argv[1];//assign the 2nd thing in argv as the turtlename
   }
-  else
+  else//otherwise
   {
     private_node.getParam("turtle", turtle_name);
   }
