@@ -1,8 +1,10 @@
 digraph G {
-"world" -> "turtle2"[label=" Broadcaster: /turtle2_tf2_broadcaster\nAverage rate: 183.862\nBuffer length: 4.993\nMost recent transform: 1612014953.381\nOldest transform: 1612014948.389\n"];
-"world" -> "turtle1"[label=" Broadcaster: /turtle1_tf2_broadcaster\nAverage rate: 62.696\nBuffer length: 4.992\nMost recent transform: 1612014953.381\nOldest transform: 1612014948.389\n"];
+"world" -> "turtle2"[label=" Broadcaster: /turtle2_tf2_broadcaster\nAverage rate: 62.712\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
+"world" -> "turtle1"[label=" Broadcaster: /turtle1_tf2_broadcaster\nAverage rate: 62.712\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
+"world" -> "turtle3"[label=" Broadcaster: /turtle3_tf2_broadcaster\nAverage rate: 62.711\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
+"world" -> "turtle4"[label=" Broadcaster: /turtle4_tf2_broadcaster\nAverage rate: 62.711\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1612014953.3871908"[ shape=plaintext ] ;
+"Recorded at time: 1612018620.7444763"[ shape=plaintext ] ;
 }->"world";
 }
