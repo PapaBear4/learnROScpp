@@ -42,7 +42,7 @@ int main(int argc, char** argv){
   while (node.ok()){
     geometry_msgs::TransformStamped transformStamped;
     try{
-      transformStamped = tfBuffer.lookupTransform(create_turtle_name, listen_turtle_name,
+      transformStamped = tfBuffer.lookupTransform(listen_turtle_name, create_turtle_name,
                                ros::Time(0));//try to get the latest message
     }
     catch (tf2::TransformException &ex) {
