@@ -25,7 +25,7 @@ int main(int argc, char** argv){
   ros::ServiceClient spawner =
     node.serviceClient<turtlesim::Spawn>("spawn"); //create a client to call the service
   turtlesim::Spawn turtle;  //object to spawn
-  turtle.request.x = 4;
+  turtle.request.x = 2;
   turtle.request.y = 2;
   turtle.request.theta = 0;
   turtle.request.name = create_turtle_name;
@@ -42,8 +42,11 @@ int main(int argc, char** argv){
   while (node.ok()){
     geometry_msgs::TransformStamped transformStamped;
     try{
-      transformStamped = tfBuffer.lookupTransform(listen_turtle_name, create_turtle_name,
-                               ros::Time(0));//try to get the latest message
+      //the order of the lookup values MATTERS
+      ros::Time now = ros::Time::now();
+      ros::Time past = ros::Time::now() - ros::Duration(5.0);
+      transformStamped = tfBuffer.lookupTransform(create_turtle_name, now, listen_turtle_name,
+                               past, "world", ros::Duration(1.0));//try to get the latest message
     }
     catch (tf2::TransformException &ex) {
       ROS_WARN("%s",ex.what());

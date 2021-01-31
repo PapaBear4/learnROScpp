@@ -1,10 +1,11 @@
 digraph G {
-"world" -> "turtle2"[label=" Broadcaster: /turtle2_tf2_broadcaster\nAverage rate: 62.712\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
-"world" -> "turtle1"[label=" Broadcaster: /turtle1_tf2_broadcaster\nAverage rate: 62.712\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
-"world" -> "turtle3"[label=" Broadcaster: /turtle3_tf2_broadcaster\nAverage rate: 62.711\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
-"world" -> "turtle4"[label=" Broadcaster: /turtle4_tf2_broadcaster\nAverage rate: 62.711\nBuffer length: 4.975\nMost recent transform: 1612018620.727\nOldest transform: 1612018615.752\n"];
+"world" -> "turtle3"[label=" Broadcaster: /turtle3_tf2_broadcaster\nAverage rate: 62.696\nBuffer length: 4.976\nMost recent transform: 1612104709.357\nOldest transform: 1612104704.38\n"];
+"world" -> "turtle2"[label=" Broadcaster: /turtle2_tf2_broadcaster\nAverage rate: 62.705\nBuffer length: 4.976\nMost recent transform: 1612104709.356\nOldest transform: 1612104704.38\n"];
+"world" -> "turtle1"[label=" Broadcaster: /turtle1_tf2_broadcaster\nAverage rate: 62.704\nBuffer length: 4.976\nMost recent transform: 1612104709.356\nOldest transform: 1612104704.38\n"];
+"world" -> "turtle4"[label=" Broadcaster: /turtle4_tf2_broadcaster\nAverage rate: 62.707\nBuffer length: 4.975\nMost recent transform: 1612104709.356\nOldest transform: 1612104704.381\n"];
+"turtle1" -> "carrot1"[label=" Broadcaster: /broadcaster_frame\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1612104709.359\nOldest transform: 1612104704.459\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1612018620.7444763"[ shape=plaintext ] ;
+"Recorded at time: 1612104709.3816059"[ shape=plaintext ] ;
 }->"world";
 }

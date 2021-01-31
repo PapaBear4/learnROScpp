@@ -8,7 +8,7 @@
     <param name="scale_angular" value="2" type="double"/>
 
     <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
-          args="turtle1" name="turtle1_tf2_broadcaster" />
+          args="/turtle1" name="turtle1_tf2_broadcaster" />
     <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
           args="/turtle2" name="turtle2_tf2_broadcaster" />
     <node pkg="learning_tf2" type="turtle_tf2_broadcaster"
@@ -22,5 +22,8 @@
           args="turtle2 turtle3"   name="listener23" />
     <node pkg="learning_tf2" type="turtle_tf2_listener"
           args="turtle3 turtle4"   name="listener34" />  
+          
+    <node pkg="learning_tf2" type="frame_tf2_broadcaster"
+          name="broadcaster_frame" />      
 
   </launch>
