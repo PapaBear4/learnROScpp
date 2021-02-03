@@ -1,2 +1,2 @@
-beginner_tutorials:learning_tf2:robot_setup_tf
+beginner_tutorials:learning_tf2:robot_setup_tf:testbot_description
 -DCATKIN_DEVEL_PREFIX=/home/sidell/learnROS/devel -DCMAKE_INSTALL_PREFIX=/home/sidell/learnROS/install -G Unix Makefiles

@@ -1272,6 +1272,19 @@ turtle_tf2_broadcaster/fast:
 	$(MAKE) -f learning_tf2/CMakeFiles/turtle_tf2_broadcaster.dir/build.make learning_tf2/CMakeFiles/turtle_tf2_broadcaster.dir/build
 .PHONY : turtle_tf2_broadcaster/fast
 
+#=============================================================================
+# Target rules for targets named parser
+
+# Build rule for target.
+parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 parser
+.PHONY : parser
+
+# fast build rule for target.
+parser/fast:
+	$(MAKE) -f testbot_description/CMakeFiles/parser.dir/build.make testbot_description/CMakeFiles/parser.dir/build
+.PHONY : parser/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1370,6 +1383,7 @@ help:
 	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... turtle_tf2_broadcaster"
+	@echo "... parser"
 .PHONY : help
 
 

@@ -1183,7 +1183,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "7"
+			"value" : "8"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -2194,6 +2194,18 @@
 			"value" : "/opt/ros/noetic/share/catkin/cmake"
 		},
 		{
+			"name" : "class_loader_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for class_loader."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/class_loader/cmake"
+		},
+		{
 			"name" : "cpp_common_DIR",
 			"properties" : 
 			[
@@ -2539,7 +2551,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/opt/ros/noetic/lib/libmessage_filters.so"
+			"value" : "/opt/ros/noetic/lib/libxmlrpcpp.so"
 		},
 		{
 			"name" : "message_filters_DIR",
@@ -2578,6 +2590,18 @@
 			"value" : "/opt/ros/noetic/share/message_runtime/cmake"
 		},
 		{
+			"name" : "pluginlib_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for pluginlib."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/pluginlib/cmake"
+		},
+		{
 			"name" : "robot_setup_tf_BINARY_DIR",
 			"properties" : 
 			[
@@ -2612,6 +2636,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/opt/ros/noetic/share/rosconsole/cmake"
+		},
+		{
+			"name" : "rosconsole_bridge_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for rosconsole_bridge."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/rosconsole_bridge/cmake"
 		},
 		{
 			"name" : "roscpp_DIR",
@@ -2672,6 +2708,30 @@
 			],
 			"type" : "PATH",
 			"value" : "/opt/ros/noetic/share/rosgraph_msgs/cmake"
+		},
+		{
+			"name" : "roslib_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for roslib."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/roslib/cmake"
+		},
+		{
+			"name" : "rospack_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for rospack."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/rospack/cmake"
 		},
 		{
 			"name" : "rospy_DIR",
@@ -2746,6 +2806,30 @@
 			"value" : "GTestTargets"
 		},
 		{
+			"name" : "testbot_description_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/sidell/learnROS/build/testbot_description"
+		},
+		{
+			"name" : "testbot_description_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/sidell/learnROS/src/testbot_description"
+		},
+		{
 			"name" : "tf2_DIR",
 			"properties" : 
 			[
@@ -2816,6 +2900,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/opt/ros/noetic/share/turtlesim/cmake"
+		},
+		{
+			"name" : "urdf_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for urdf."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/noetic/share/urdf/cmake"
 		},
 		{
 			"name" : "xmlrpcpp_DIR",

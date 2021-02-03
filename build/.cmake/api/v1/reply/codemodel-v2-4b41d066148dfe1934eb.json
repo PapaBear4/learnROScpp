@@ -11,7 +11,8 @@
 						1,
 						4,
 						5,
-						6
+						6,
+						7
 					],
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
@@ -25,8 +26,8 @@
 						25,
 						26,
 						27,
-						49,
-						67
+						50,
+						68
 					]
 				},
 				{
@@ -105,7 +106,6 @@
 						23,
 						24,
 						38,
-						39,
 						40,
 						41,
 						42,
@@ -115,12 +115,13 @@
 						46,
 						47,
 						48,
-						56,
+						49,
 						57,
 						58,
 						59,
 						60,
-						66
+						61,
+						67
 					]
 				},
 				{
@@ -150,12 +151,11 @@
 						31,
 						32,
 						33,
-						50,
 						51,
 						52,
 						53,
 						54,
-						68,
+						55,
 						69,
 						70,
 						71,
@@ -164,7 +164,8 @@
 						74,
 						75,
 						76,
-						77
+						77,
+						78
 					]
 				},
 				{
@@ -180,19 +181,34 @@
 					"targetIndexes" : 
 					[
 						28,
-						55,
-						61,
+						56,
 						62,
 						63,
 						64,
 						65,
-						78,
+						66,
 						79,
 						80,
 						81,
 						82,
 						83,
-						84
+						84,
+						85
+					]
+				},
+				{
+					"build" : "testbot_description",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "testbot_description",
+					"targetIndexes" : 
+					[
+						39
 					]
 				}
 			],
@@ -205,7 +221,8 @@
 						1,
 						4,
 						5,
-						6
+						6,
+						7
 					],
 					"directoryIndexes" : 
 					[
@@ -217,8 +234,8 @@
 						25,
 						26,
 						27,
-						49,
-						67
+						50,
+						68
 					]
 				},
 				{
@@ -288,7 +305,6 @@
 						23,
 						24,
 						38,
-						39,
 						40,
 						41,
 						42,
@@ -298,12 +314,13 @@
 						46,
 						47,
 						48,
-						56,
+						49,
 						57,
 						58,
 						59,
 						60,
-						66
+						61,
+						67
 					]
 				},
 				{
@@ -330,12 +347,11 @@
 						31,
 						32,
 						33,
-						50,
 						51,
 						52,
 						53,
 						54,
-						68,
+						55,
 						69,
 						70,
 						71,
@@ -344,7 +360,8 @@
 						74,
 						75,
 						76,
-						77
+						77,
+						78
 					]
 				},
 				{
@@ -357,19 +374,31 @@
 					"targetIndexes" : 
 					[
 						28,
-						55,
-						61,
+						56,
 						62,
 						63,
 						64,
 						65,
-						78,
+						66,
 						79,
 						80,
 						81,
 						82,
 						83,
-						84
+						84,
+						85
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "testbot_description",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						39
 					]
 				}
 			],
@@ -647,6 +676,13 @@
 					"jsonFile" : "target-listener-33edc475b398563f7c06.json",
 					"name" : "listener",
 					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "parser::@97484bde8ecee26b0dea",
+					"jsonFile" : "target-parser-30fddb2b563be7594589.json",
+					"name" : "parser",
+					"projectIndex" : 7
 				},
 				{
 					"directoryIndex" : 4,
