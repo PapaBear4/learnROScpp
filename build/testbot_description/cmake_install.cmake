@@ -52,3 +52,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/testbot_description" TYPE FILE FILES "/home/sidell/learnROS/src/testbot_description/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/testbot_description" TYPE FILE FILES
+    "/home/sidell/learnROS/src/testbot_description/launch/display.launch"
+    "/home/sidell/learnROS/src/testbot_description/urdf/my_robot.urdf"
+    "/home/sidell/learnROS/src/testbot_description/rviz/urdf.rviz"
+    "/home/sidell/learnROS/src/testbot_description/meshes/main_mount.stl"
+    "/home/sidell/learnROS/src/testbot_description/meshes/base_mount.dae"
+    )
+endif()
+
