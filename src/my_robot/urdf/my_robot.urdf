@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<robot name="test_robot">
+
+  <material name="blue">
+      <color rgba="0 0 0.8 .5"/>
+  </material>
+  <material name="black">
+      <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+      <color rgba="1 1 1 1"/>
+  </material>
+  
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/base_link.stl"
+              scale=".001 .001 .001"/>
+      </geometry> 
+      <origin xyz="0 0 0"/>
+      <material name="blue"/>
+    </visual>
+  </link>
+  
+  <link name="round_plate" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/round_plate.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+  
+  <joint name="yaw_servo" type="continuous">
+    <parent link="base_link"/>
+    <child link="round_plate"/>
+    <origin xyz="0 0 .310"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="main_mount" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/main_mount.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="plate_mount" type="fixed">
+    <parent link="round_plate"/>
+    <child link="main_mount"/>
+    <origin rpy="0 0 0" xyz="-0.140 0 0.045"/>
+  </joint>
+    
+  <link name="forward_drive_arm" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/forward_drive_arm.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="-0.162 0 0" rpy="3.1415 -1.5708 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="forward_servo" type="continuous">
+    <parent link="main_mount"/>
+    <child link="forward_drive_arm"/>
+    <origin xyz="0.210 0 .304" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint> 
+
+  <link name="vertical_drive_arm" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/vertical_drive_arm.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="-1.5708 1.5708 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="vertical_servo" type="continuous">
+    <parent link="main_mount"/>
+    <child link="vertical_drive_arm"/>
+    <origin xyz=".048 0 .304" rpy="1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint> 
+
+  <link name="vertical_drive_link" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/link.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <link name="virtual_vertDrive_link">
+    <visual>
+      <geometry>
+        <cylinder length=".01" radius="0.001"/>
+      </geometry>
+      <origin xyz="0 0 -.005" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="vertDrive_link_a" type="continuous">
+    <parent link="vertical_drive_arm"/>
+    <child link="virtual_vertDrive_link"/>
+    <origin xyz="0 0 .350"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="forward_servo" multiplier="1" offset="0"/>
+  </joint> 
+  <joint name="vertDrive_link_b" type="continuous">
+    <parent link="virtual_vertDrive_link"/>
+    <child link="vertical_drive_link"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="vertical_servo" multiplier="-1" offset="0"/>
+  </joint> 
+
+  <link name="horizontal_arm" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/horizontal_arm.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 -0.350 0" rpy="1.5708 0 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <link name="virtual_fwdDrive_horizArm">
+    <visual>
+      <geometry>
+        <cylinder length=".01" radius="0.001"/>
+      </geometry>
+      <origin xyz="0 0 -.005" rpy="0 0 0"/>
+    </visual>
+  </link>
+  
+  <joint name="fwd_drv_horiz_arm_a" type="continuous">
+    <parent link="forward_drive_arm"/>
+    <child link="virtual_fwdDrive_horizArm"/>
+    <origin xyz="-0.092 0 0.800"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="forward_servo" multiplier="-1" offset="0"/>
+  </joint> 
+  <joint name="fwd_drv_horiz_arm_b" type="continuous">
+    <parent link="virtual_fwdDrive_horizArm"/>
+    <child link="horizontal_arm"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="vertical_servo" multiplier="1" offset="0"/>
+  </joint> 
+
+  <link name="static_link_1" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/link.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="static_link_joint" type="continuous">
+    <parent link="main_mount"/>
+    <child link="static_link_1"/>
+    <origin xyz="0.300 -0.361 0.4763" rpy="1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="forward_servo" multiplier="1" offset="0"/>
+  </joint> 
+  
+  <link name="triangle_link" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/triangular_link.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="fwdArm_trianlge_joint" type="continuous">
+    <parent link="forward_drive_arm"/>
+    <child link="triangle_link"/>
+    <origin xyz="0.088 0 0.800" rpy="1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="forward_servo" multiplier="-1" offset="0"/>
+  </joint> 
+
+  <link name="forearm_link" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/link.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="forearm_link_joint_a" type="continuous">
+    <parent link="triangle_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="-0.040 0.1723 -0.101553" rpy="-1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="vertical_servo" multiplier="1" offset="0"/>
+  </joint> 
+
+  <link name="claw_support" >
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/claw_support.stl"
+              scale=".001 .001 .001"/>
+      </geometry>
+      <origin xyz="0.128 0 0" rpy="0 0 1.5708"/>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="claw_joint" type="continuous">
+    <parent link="horizontal_arm"/>
+    <child link="claw_support"/>
+    <origin xyz="0 0.800 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <mimic joint="vertical_servo" multiplier="-1" offset="0"/>
+  </joint> 
+
+
+
+
+</robot>

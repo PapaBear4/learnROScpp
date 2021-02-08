@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/sidell/learnROS/build/gtest/cmake_install.cmake")
   include("/home/sidell/learnROS/build/beginner_tutorials/cmake_install.cmake")
+  include("/home/sidell/learnROS/build/my_robot/cmake_install.cmake")
   include("/home/sidell/learnROS/build/robot_setup_tf/cmake_install.cmake")
   include("/home/sidell/learnROS/build/learning_tf2/cmake_install.cmake")
   include("/home/sidell/learnROS/build/testbot_description/cmake_install.cmake")
